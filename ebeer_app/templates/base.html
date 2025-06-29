@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Ebeer{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- V2-Styles -->
+  <link rel="stylesheet" href="{% static 'ebeer_app/css/styles.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  {% block content %}{% endblock %}
+  <!-- V2-Scripts -->
+  <script src="{% static 'ebeer_app/js/carousel.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
