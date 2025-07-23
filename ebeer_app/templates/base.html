@@ -5,12 +5,24 @@
   <meta charset="UTF-8">
   <title>{% block title %}Ebeer{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- V2-Styles -->
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="{% static 'ebeer_app/css/styles.css' %}">
   {% block extra_head %}{% endblock %}
 </head>
 <body>
-  {% block content %}{% endblock %}
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo"><a href="/">e-Beer</a></h1>
+      <form action="/" method="get" class="search">
+        <input type="text" name="q" placeholder="Search produce">
+      </form>
+      <a href="{% url 'cart_detail' %}" class="cart-link">Cart</a>
+    </div>
+  </header>
+
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
   <!-- V2-Scripts -->
   <script src="{% static 'ebeer_app/js/carousel.js' %}"></script>
   {% block extra_js %}{% endblock %}

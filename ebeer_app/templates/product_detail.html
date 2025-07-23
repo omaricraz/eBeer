@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}{{ product.name }} - e-Beer{% endblock %}
+{% block content %}
+<div class="product-detail">
+  <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width:300px;">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <p class="price">${{ product.price }}</p>
+  <a class="button" href="{% url 'add_to_cart' product.id %}">Add to cart</a>
+</div>
+{% endblock %}
